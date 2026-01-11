@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jhon Wictor — Tech & Dev Portfolio</title>
+  <meta name="description" content="Portfólio com foco em Tecnologia, Segurança e Desenvolvimento."/>
+  <meta property="og:title" content="Jhon Wictor — Tech & Dev"/>
+  <meta property="og:description" content="Projetos, experiência e contato."/>
+  <meta property="og:type" content="website"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="topbar container" aria-label="Topo">
+    <div class="brand">
+      <span class="logo-dot" aria-hidden="true"></span>
+      <span class="brand-title">Jhon Wictor</span>
+      <span class="brand-sub">Tech • Security • DevOps</span>
+    </div>
+    <nav class="nav">
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato" class="btn btn-neon">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Tecnologia & Desenvolvimento</p>
+          <h1 id="hero-title">Construindo soluções <span class="grad">seguras</span> e <span class="grad2">escaláveis</span>.</h1>
+          <p class="lead">Automação, monitoramento e integração de sistemas. Foco em confiabilidade, CI/CD, IaC e segurança aplicada a operações.</p>
+          <div class="cta-row">
+            <a class="btn btn-neon" href="JhonWictorCurrículo.pdf" download>Baixar CV</a>
+            <a class="btn btn-ghost" href="https://github.com/LordJhonCyber" target="_blank" rel="noopener">Ver GitHub</a>
+          </div>
+          <div class="stack">
+            <span>Azure</span><span>Docker</span><span>Terraform</span><span>K8s</span><span>Linux</span><span>Python</span>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="assets/tech-hero.gif" alt="Animação temática tecnológica" loading="eager"/>
+        </figure>
+      </div>
+      <div class="gridlines" aria-hidden="true"></div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="container section" aria-labelledby="proj-title">
+      <h2 id="proj-title" class="section-title">Projetos em Destaque</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Pipeline CI/CD Minimal</h3>
+          <p>Modelo enxuto de integração contínua com testes, lint e deploy para GitHub Pages.</p>
+          <a class="btn-link" href="https://github.com/LordJhonCyber" target="_blank" rel="noopener">Repositório →</a>
+        </article>
+        <article class="card">
+          <h3>Monitoramento de Alarmes</h3>
+          <p>Script Python para ingestão de eventos e dashboard de status em tempo real.</p>
+          <a class="btn-link" href="https://github.com/LordJhonCyber" target="_blank" rel="noopener">Repositório →</a>
+        </article>
+        <article class="card">
+          <h3>Infra como Código (IaC)</h3>
+          <p>Templates Terraform para provisionar recursos em Azure com políticas de segurança.</p>
+          <a class="btn-link" href="https://github.com/LordJhonCyber" target="_blank" rel="noopener">Repositório →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="container section" aria-labelledby="exp-title">
+      <h2 id="exp-title" class="section-title">Experiência</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div>
+            <h3>Ceará Segurança / Banco do Nordeste — Operador Líder</h3>
+            <p class="muted">Atual</p>
+            <p>Gestão de equipe com metodologias ágeis; supervisão de sistemas de segurança (CFTV, alarmes e periféricos) e diretrizes de conformidade.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div>
+            <h3>Engesoftware / Banco do Nordeste — Gerente de Serviços de Segurança</h3>
+            <p class="muted">03/2023–04/2025</p>
+            <p>Monitoramento de sistemas críticos, indicadores e melhoria contínua em segurança de TI.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div>
+            <h3>Wipro / Banco do Nordeste — Programador & Especialista N1</h3>
+            <p class="muted">11/2021–03/2023</p>
+            <p>Supervisório, automação de processos e integração de sistemas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="container section" aria-labelledby="ct-title">
+      <h2 id="ct-title" class="section-title">Contato</h2>
+      <div class="contact">
+        <a class="btn btn-neon" href="mailto:jhonwictor@hotmail.com">E-mail</a>
+        <a class="btn btn-ghost" href="tel:+5585985802386">Ligar</a>
+        <a class="btn btn-ghost" href="https://github.com/LordJhonCyber" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© 2026 — Jhon Wictor</p>
+  </footer>
+
+</body>
+</html>
