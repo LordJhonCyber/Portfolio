@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Jhon</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Jhon</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="portfolio.html" class="active">Portfólio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">Sobre</a></li>
+        <li id="auth-link"><a href="login.html">Login</a></li>
+        <li id="profile-link" style="display: none;"><a href="profile.html">Perfil</a></li>
+        <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Sair</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Meu Portfólio</h1>
+      <p>Confira alguns dos meus projetos recentes</p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <div class="container">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="photography">Fotografia</button>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio">
+    <div class="container">
+      <div class="portfolio-grid" id="portfolio-grid">
+        <div class="loading">Carregando portfólio...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Create Project Button (if logged in as admin) -->
+  <section id="admin-section" style="display: none; padding: 40px 0;">
+    <div class="container">
+      <a href="create-project.html" class="btn btn-primary">+ Novo Projeto</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Jhon. Todos os direitos reservados.</p>
+      <div class="social-links">
+        <a href="https://github.com/LordJhonCyber" target="_blank">GitHub</a>
+        <a href="https://www.instagram.com/wictor_jhon/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/jhon-wictor/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
