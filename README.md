@@ -46,42 +46,6 @@ Web/
 - ✅ Gerenciar todos os artigos
 - ✅ Deletar usuários
 
-## 🚀 Como Usar
-
-### 1. Iniciar a API
-
-```bash
-cd "c:\Users\Jhon\OneDrive\Projetos\Site Jhon\API"
-npm install
-npm run dev
-```
-
-A API estará em `http://localhost:5000`
-
-### 2. Abrir o Website
-
-Você pode servir o site de várias formas:
-
-**Opção A: Usar Live Server no VS Code**
-- Instale a extensão "Live Server"
-- Clique com botão direito em `index.html`
-- Selecione "Open with Live Server"
-
-**Opção B: Usar Python**
-```bash
-cd "c:\Users\Jhon\OneDrive\Projetos\Site Jhon\Web"
-python -m http.server 8000
-```
-
-**Opção C: Usar Node.js HTTP Server**
-```bash
-npm install -g http-server
-cd "c:\Users\Jhon\OneDrive\Projetos\Site Jhon\Web"
-http-server
-```
-
-O site estará em `http://localhost:8000` (ou a porta indicada)
-
 ## 📱 Páginas do Site
 
 ### Página Inicial (`index.html`)
@@ -139,44 +103,6 @@ O site estará em `http://localhost:8000` (ou a porta indicada)
 - Formulários validados
 - Footer com links sociais
 
-## 🔗 Integração com API
-
-O site se comunica com a API através do arquivo `js/config.js`:
-
-```javascript
-const API_URL = 'http://localhost:5000/api';
-
-// Exemplos de endpoints utilizados:
-GET    /api/portfolio           // Listar projetos
-GET    /api/portfolio/:slug     // Detalhe do projeto
-POST   /api/portfolio           // Criar projeto (autenticado)
-
-GET    /api/content             // Listar artigos
-POST   /api/content             // Criar artigo (autenticado)
-
-GET    /api/images/list         // Listar imagens
-GET    /api/images/:filename    // Servir imagem
-
-POST   /api/auth/register       // Registrar usuário
-POST   /api/auth/login          // Login
-```
-
-## 🔐 Autenticação
-
-- Token JWT armazenado no `localStorage`
-- Validação automática em cada requisição
-- Menu atualizado após login/logout
-- Redirecionamento em páginas protegidas
-
-## 📸 Imagens
-
-As imagens são armazenadas em `../Imagens/` e servidas pela API:
-
-```
-GET http://localhost:5000/api/images/profile01.jfif
-GET http://localhost:5000/api/images/list
-```
-
 ## 🛠️ Troubleshooting
 
 ### Erro de CORS
@@ -212,3 +138,4 @@ MIT
 ---
 
 **Site desenvolvido com ❤️ para Jhon**
+
