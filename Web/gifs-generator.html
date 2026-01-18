@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de GIFs Futurísticos</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <style>
+    .gif-generator {
+      background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 27, 0.9));
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .preview-box {
+      background: rgba(10, 14, 27, 0.8);
+      border: 2px dashed var(--primary-color);
+      border-radius: 8px;
+      padding: 2rem;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    .code-preview {
+      background: #1a1a1a;
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+      padding: 1rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.85rem;
+      color: #0f0;
+      line-height: 1.4;
+    }
+
+    .tool-card {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1));
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+    }
+
+    .tool-card h4 {
+      color: var(--primary-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-card p {
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      color: var(--dark-color);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-badge {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--dark-color);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .gif-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .gif-item {
+      background: rgba(10, 14, 27, 0.8);
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .gif-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+
+    .gif-item-preview {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .gif-item-name {
+      color: var(--primary-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .tutorial-step {
+      background: linear-gradient(135deg, rgba(26, 31, 58, 0.6), rgba(10, 14, 27, 0.6));
+      border-left: 4px solid var(--primary-color);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Jhon Wictor</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#geradores">Geradores</a></li>
+        <li><a href="#tutoriais">Tutoriais</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 2rem;">
+    <h1 style="color: var(--primary-light); text-align: center; margin-bottom: 1rem;">
+      🎬 Gerador de GIFs Futurísticos
+    </h1>
+    <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
+      Crie GIFs profissionais de alta qualidade que combinam com o tema do seu site
+    </p>
+
+    <!-- Seção: Geradores Online Recomendados -->
+    <section id="geradores">
+      <h2 style="color: var(--primary-light); margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 1rem;">
+        🌐 Geradores Online (Gratuitos)
+      </h2>
+
+      <div class="grid-2">
+        <!-- EZGIF -->
+        <div class="tool-card">
+          <h4>🎨 EZGIF - Conversor Online</h4>
+          <p><strong>Melhor para:</strong> Converter vídeos para GIF, otimizar, redimensionar</p>
+          <p><strong>URL:</strong> https://ezgif.com</p>
+          <p style="color: var(--accent-color);">✓ Gratuito</p>
+          <p style="color: var(--accent-color);">✓ Sem instalação</p>
+          <p style="color: var(--accent-color);">✓ Otimização automática</p>
+          <a href="https://ezgif.com" target="_blank" class="download-btn">Acessar →</a>
+        </div>
+
+        <!-- Photopea -->
+        <div class="tool-card">
+          <h4>🖼️ Photopea - Photoshop Online</h4>
+          <p><strong>Melhor para:</strong> Criar e editar GIFs com camadas</p>
+          <p><strong>URL:</strong> https://photopea.com</p>
+          <p style="color: var(--accent-color);">✓ Interface familiar (Photoshop-like)</p>
+          <p style="color: var(--accent-color);">✓ Timeline para animações</p>
+          <p style="color: var(--accent-color);">✓ Efeitos avançados</p>
+          <a href="https://photopea.com" target="_blank" class="download-btn">Acessar →</a>
+        </div>
+
+        <!-- Canva -->
+        <div class="tool-card">
+          <h4>🎭 Canva - Design Gráfico</h4>
+          <p><strong>Melhor para:</strong> Criar GIFs com templates profissionais</p>
+          <p><strong>URL:</strong> https://www.canva.com</p>
+          <p style="color: var(--accent-color);">✓ Templates prontos</p>
+          <p style="color: var(--accent-color);">✓ Arrastar e soltar</p>
+          <p style="color: var(--accent-color);">✓ Elementos profissionais</p>
+          <a href="https://www.canva.com" target="_blank" class="download-btn">Acessar →</a>
+        </div>
+
+        <!-- Animista -->
+        <div class="tool-card">
+          <h4>✨ Animista - CSS Animations</h4>
+          <p><strong>Melhor para:</strong> Gerar CSS animations prontas para copiar</p>
+          <p><strong>URL:</strong> https://animista.net</p>
+          <p style="color: var(--accent-color);">✓ Biblioteca de animações</p>
+          <p style="color: var(--accent-color);">✓ Customizável</p>
+          <p style="color: var(--accent-color);">✓ Copy & paste</p>
+          <a href="https://animista.net" target="_blank" class="download-btn">Acessar →</a>
+        </div>
+
+        <!-- Lottie Files -->
+        <div class="tool-card">
+          <h4>🎬 Lottie Files - Animações JSON</h4>
+          <p><strong>Melhor para:</strong> Animações vetoriais avançadas</p>
+          <p><strong>URL:</strong> https://lottiefiles.com</p>
+          <p style="color: var(--accent-color);">✓ Biblioteca de 50k+ animações</p>
+          <p style="color: var(--accent-color);">✓ Sem pixelação</p>
+          <p style="color: var(--accent-color);">✓ Leve e escalável</p>
+          <a href="https://lottiefiles.com" target="_blank" class="download-btn">Acessar →</a>
+        </div>
+
+        <!-- Rive -->
+        <div class="tool-card">
+          <h4>🎨 Rive - Animações Vetor Interativas</h4>
+          <p><strong>Melhor para:</strong> Animações vetoriais com interação</p>
+          <p><strong>URL:</strong> https://rive.app</p>
+          <p style="color: var(--accent-color);">✓ Editor visual</p>
+          <p style="color: var(--accent-color);">✓ Animações interativas</p>
+          <p style="color: var(--accent-color);">✓ Exporta para web</p>
+          <a href="https://rive.app" target="_blank" class="download-btn">Acessar →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: GIFs Temáticos Recomendados -->
+    <section style="margin-top: 3rem;">
+      <h2 style="color: var(--primary-light); margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 1rem;">
+        🎯 GIFs Temáticos por Seção
+      </h2>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">💻 Hero Section (Coding/Tech)</h3>
+        
+        <div class="tutorial-step">
+          <p><strong>Buscas recomendadas em GIPHY/Tenor:</strong></p>
+          <ul style="margin-left: 1.5rem; color: var(--text-color);">
+            <li>"coding animation" - Código digitando</li>
+            <li>"terminal typing" - Terminal com texto</li>
+            <li>"hacker typing" - Digitação rápida</li>
+            <li>"computer working" - Computador funcionando</li>
+            <li>"developer at work" - Dev trabalhando</li>
+            <li>"HTML CSS JavaScript" - Linguagens</li>
+          </ul>
+        </div>
+
+        <div class="preview-box" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="font-size: 4rem; animation: float 3s ease-in-out infinite;">💻</div>
+          <p style="color: var(--text-light); text-align: center;">Substitua este emoji por um GIF de codificação</p>
+        </div>
+
+        <p style="color: var(--text-light);">
+          <strong>Dica:</strong> Procure por GIFs com fundo transparente ou preto (combina com tema futurístico)
+        </p>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">🚀 About Section (Growth/Speed)</h3>
+        
+        <div class="tutorial-step">
+          <p><strong>Buscas recomendadas:</strong></p>
+          <ul style="margin-left: 1.5rem; color: var(--text-color);">
+            <li>"rocket launch" - Foguete decolando</li>
+            <li>"rocket flying" - Foguete em voo</li>
+            <li>"startup animation" - Inicialização</li>
+            <li>"loading animation" - Carregamento</li>
+            <li>"neon rocket" - Foguete neon</li>
+            <li>"speed animation" - Velocidade</li>
+          </ul>
+        </div>
+
+        <div class="preview-box" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="font-size: 3rem; animation: pulse 2s ease-in-out infinite; filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));">🚀</div>
+          <p style="color: var(--text-light); text-align: center;">Substitua este emoji por um GIF de foguete/crescimento</p>
+        </div>
+
+        <p style="color: var(--text-light);">
+          <strong>Dica:</strong> Escolha GIFs com cores neon (azul, roxo) que combinem com palete
+        </p>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">⚙️ Projects Section (Mechanics/Technology)</h3>
+        
+        <div class="tutorial-step">
+          <p><strong>Buscas recomendadas:</strong></p>
+          <ul style="margin-left: 1.5rem; color: var(--text-color);">
+            <li>"gears rotating" - Engrenagens girando</li>
+            <li>"mechanical animation" - Mecânica</li>
+            <li>"neon gears" - Engrenagens neon</li>
+            <li>"website building" - Construindo website</li>
+            <li>"API working" - API funcionando</li>
+            <li>"tech workflow" - Fluxo tecnológico</li>
+          </ul>
+        </div>
+
+        <div class="preview-box" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="font-size: 2.5rem; animation: rotate 20s linear infinite;">⚙️</div>
+          <p style="color: var(--text-light); text-align: center;">Substitua este emoji por um GIF de engrenagens/projeto</p>
+        </div>
+
+        <p style="color: var(--text-light);">
+          <strong>Dica:</strong> Busque GIFs de 300-400px de largura para bom tamanho e carregamento rápido
+        </p>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">📊 Experience Section (Data/Analytics)</h3>
+        
+        <div class="tutorial-step">
+          <p><strong>Buscas recomendadas:</strong></p>
+          <ul style="margin-left: 1.5rem; color: var(--text-color);">
+            <li>"data visualization" - Visualização dados</li>
+            <li>"animated dashboard" - Dashboard animado</li>
+            <li>"chart animation" - Gráficos animados</li>
+            <li>"statistics animation" - Estatísticas</li>
+            <li>"database animation" - Banco de dados</li>
+            <li>"analytics monitoring" - Monitoramento</li>
+          </ul>
+        </div>
+
+        <div class="preview-box" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="font-size: 2.5rem; animation: float 3s ease-in-out infinite;">📊</div>
+          <p style="color: var(--text-light); text-align: center;">Substitua este emoji por um GIF de dados/análise</p>
+        </div>
+
+        <p style="color: var(--text-light);">
+          <strong>Dica:</strong> Procure por cores em gradiente (azul para verde) que combinem com palete
+        </p>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">📧 Contact Section (Communication)</h3>
+        
+        <div class="tutorial-step">
+          <p><strong>Buscas recomendadas:</strong></p>
+          <ul style="margin-left: 1.5rem; color: var(--text-color);">
+            <li>"email animation" - Email animado</li>
+            <li>"envelope sending" - Envelope enviando</li>
+            <li>"message animation" - Mensagem</li>
+            <li>"paper plane" - Avião de papel</li>
+            <li>"success checkmark" - Checkmark</li>
+            <li>"communication animation" - Comunicação</li>
+          </ul>
+        </div>
+
+        <div class="preview-box" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="font-size: 3rem; animation: glow 2s ease-in-out infinite; color: var(--accent-color);">📧</div>
+          <p style="color: var(--text-light); text-align: center;">Substitua este emoji por um GIF de email/contato</p>
+        </div>
+
+        <p style="color: var(--text-light);">
+          <strong>Dica:</strong> Use GIFs com cor verde neon (#00ff88) para destacar a seção
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção: Tutoriais Passo a Passo -->
+    <section id="tutoriais" style="margin-top: 3rem;">
+      <h2 style="color: var(--primary-light); margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 1rem;">
+        📚 Tutoriais Passo a Passo
+      </h2>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">✏️ Tutorial 1: Converter Vídeo para GIF</h3>
+        
+        <div class="tutorial-step">
+          <p><span class="step-badge">1</span><strong>Abra EZGIF.com</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Acesse https://ezgif.com/video-to-gif</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">2</span><strong>Selecione seu vídeo</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Clique em "Choose File" e selecione um vídeo MP4, MOV ou AVI</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">3</span><strong>Corte a duração</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Selecione apenas a parte que deseja (ex: 2-4 segundos)</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">4</span><strong>Ajuste FPS</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Reduza para 10-15 FPS para diminuir tamanho</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">5</span><strong>Redimensione</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Defina largura para 300-400px (otimiza tamanho)</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">6</span><strong>Converta</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Clique "Convert to GIF!" e aguarde</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">7</span><strong>Otimize</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Use a aba "Optimize" para comprimir ainda mais (vise < 2MB)</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">8</span><strong>Download</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Clique o botão verde "Download" para salvar</p>
+        </div>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">🎨 Tutorial 2: Criar GIF com Photopea</h3>
+        
+        <div class="tutorial-step">
+          <p><span class="step-badge">1</span><strong>Abra Photopea.com</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Acesse https://www.photopea.com</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">2</span><strong>Crie novo projeto</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Vá em File → New, defina 400x300px</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">3</span><strong>Abra a Timeline</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Vá em Window → Timeline para animação</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">4</span><strong>Crie keyframes</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Defina propriedades em diferentes frames (posição, rotação, opacidade)</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">5</span><strong>Exporte como GIF</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">File → Export As → GIF, defina duração e FPS</p>
+        </div>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">🔍 Tutorial 3: Encontrar GIFs no GIPHY</h3>
+        
+        <div class="tutorial-step">
+          <p><span class="step-badge">1</span><strong>Acesse GIPHY.com</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Vá para https://giphy.com</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">2</span><strong>Busque sua categoria</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Digite na barra de busca: "coding animation", "rocket", etc.</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">3</span><strong>Filtre por qualidade</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Use os filtros: "Trending", "Stickers", "High resolution"</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">4</span><strong>Selecione o melhor</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Clique no GIF desejado (escolha com fundo transparente/preto)</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">5</span><strong>Copie o link</strong></p>
+          <p style="color: var(--text-light); margin-top: 0.5rem;">Clique em "Share" → Copie o link direto (.gif)</p>
+        </div>
+
+        <div class="tutorial-step">
+          <p><span class="step-badge">6</span><strong>Integre no HTML</strong></p>
+          <div class="code-preview">
+&lt;img src="https://media.giphy.com/seu-gif.gif" 
+     class="icon-animated"
+     style="width: 300px; border-radius: 8px;"&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Downloads -->
+    <section id="downloads" style="margin-top: 3rem;">
+      <h2 style="color: var(--primary-light); margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 1rem;">
+        ⬇️ Downloads & Resources
+      </h2>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">📥 Ferramentas Desktop</h3>
+        
+        <div class="tool-card">
+          <h4>FFmpeg - Conversor Profissional</h4>
+          <p>Converta vídeos para GIF em linha de comando (mais controle)</p>
+          <div class="code-preview">
+ffmpeg -i video.mp4 -vf "scale=400:-1:flags=lanczos,fps=10" output.gif
+          </div>
+          <a href="https://ffmpeg.org/download.html" target="_blank" class="download-btn">Download →</a>
+        </div>
+
+        <div class="tool-card">
+          <h4>ImageMagick - Batch Processing</h4>
+          <p>Processe múltiplos GIFs em comando</p>
+          <div class="code-preview">
+convert -delay 10 -loop 0 *.jpg animated.gif
+          </div>
+          <a href="https://imagemagick.org/script/download.php" target="_blank" class="download-btn">Download →</a>
+        </div>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">🎬 Buscas Temáticas Recomendadas</h3>
+        
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Use estas palavras-chave no GIPHY, Tenor ou Unsplash:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="tool-card" style="border: none; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1)); border-left: 4px solid var(--accent-color);">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💻 Coding</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li>coding animation</li>
+              <li>terminal typing</li>
+              <li>hacker typing</li>
+              <li>developer working</li>
+              <li>code flowing</li>
+            </ul>
+          </div>
+
+          <div class="tool-card" style="border: none; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1)); border-left: 4px solid var(--accent-color);">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">🚀 Growth</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li>rocket launch</li>
+              <li>startup animation</li>
+              <li>loading animation</li>
+              <li>speed animation</li>
+              <li>growth chart</li>
+            </ul>
+          </div>
+
+          <div class="tool-card" style="border: none; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1)); border-left: 4px solid var(--accent-color);">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">⚙️ Tech</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li>gears rotating</li>
+              <li>mechanical animation</li>
+              <li>neon technology</li>
+              <li>circuit board</li>
+              <li>tech workflow</li>
+            </ul>
+          </div>
+
+          <div class="tool-card" style="border: none; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1)); border-left: 4px solid var(--accent-color);">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📊 Data</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li>data visualization</li>
+              <li>animated dashboard</li>
+              <li>chart animation</li>
+              <li>analytics monitoring</li>
+              <li>statistics</li>
+            </ul>
+          </div>
+
+          <div class="tool-card" style="border: none; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1)); border-left: 4px solid var(--accent-color);">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📧 Communication</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li>email animation</li>
+              <li>message sending</li>
+              <li>paper plane</li>
+              <li>success animation</li>
+              <li>notification</li>
+            </ul>
+          </div>
+
+          <div class="tool-card" style="border: none; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1)); border-left: 4px solid var(--accent-color);">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">🌟 Neon</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li>neon animation</li>
+              <li>neon lights</li>
+              <li>cyber animation</li>
+              <li>futuristic animation</li>
+              <li>tech neon</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="gif-generator">
+        <h3 style="color: var(--primary-light); margin-bottom: 1rem;">⚡ Checklist de Otimização</h3>
+        
+        <div class="tutorial-step">
+          <p style="color: var(--text-light);">✓ Tamanho: Máximo 3MB, ideal 500KB-1.5MB</p>
+          <p style="color: var(--text-light);">✓ Dimensão: 300-400px de largura</p>
+          <p style="color: var(--text-light);">✓ FPS: 10-15 para web (evita lag)</p>
+          <p style="color: var(--text-light);">✓ Duração: 2-4 segundos (bom loop)</p>
+          <p style="color: var(--text-light);">✓ Cores: Azul, roxo, verde neon (combina)</p>
+          <p style="color: var(--text-light);">✓ Fundo: Transparente ou preto (melhor visual)</p>
+          <p style="color: var(--text-light);">✓ Qualidade: HD ou 4K original</p>
+          <p style="color: var(--text-light);">✓ Tipo: Evite muito movimento rápido</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <div style="text-align: center; margin: 3rem 0; padding: 2rem; border: 2px solid var(--primary-color); border-radius: 8px; background: rgba(0, 212, 255, 0.05);">
+      <h3 style="color: var(--primary-light); margin-bottom: 1rem;">🎉 Pronto para Começar?</h3>
+      <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+        Escolha uma ferramenta acima e crie seu primeiro GIF futurístico agora!
+      </p>
+      <a href="index.html" class="btn">← Voltar ao Site</a>
+      <a href="guide.html" class="btn btn-secondary" style="margin-left: 1rem;">📚 Ver Guia Completo</a>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 3rem;">
+    <div class="container">
+      <p>&copy; 2026 — Jhon Wictor | Gerador de GIFs Futurísticos</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script>
+    // Menu hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger?.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger?.classList.remove('active');
+        navMenu?.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

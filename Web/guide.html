@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Integração - GIFs Animados Profissionais</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <style>
+    .guide-section {
+      background: rgba(26, 31, 58, 0.8);
+      border: 1px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+      overflow: auto;
+    }
+
+    .guide-section h3 {
+      color: var(--primary-light);
+      margin-bottom: 1rem;
+    }
+
+    .code-block {
+      background: rgba(10, 14, 27, 0.9);
+      border-left: 4px solid var(--primary-color);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin: 1rem 0;
+      color: var(--accent-color);
+    }
+
+    .gif-container {
+      display: inline-block;
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.5rem;
+      background: rgba(10, 14, 27, 0.6);
+      max-width: 200px;
+    }
+
+    .tip {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+      border-left: 4px solid var(--accent-color);
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+      color: var(--accent-color);
+    }
+
+    .warning {
+      background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(255, 100, 0, 0.1));
+      border-left: 4px solid #ffa500;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+      color: #ffb84d;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      color: var(--text-color);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--primary-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--primary-light);
+    }
+
+    a:hover {
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Jhon Wictor</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#criacao">Criar GIFs</a></li>
+        <li><a href="#integracao">Integração</a></li>
+        <li><a href="#exemplos">Exemplos</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Guide Content -->
+  <main class="container" style="padding-top: 2rem;">
+    <h1 style="color: var(--primary-light); margin-bottom: 1rem;">🎨 Guia: Animações e GIFs Profissionais</h1>
+    
+    <!-- Criação de GIFs -->
+    <section id="criacao" class="guide-section">
+      <h2>📸 Como Criar GIFs Animados</h2>
+      
+      <h3>Opção 1: Usando GIPHY ou Tenor</h3>
+      <ul>
+        <li>Visite <a href="https://giphy.com" target="_blank">GIPHY.com</a> ou <a href="https://tenor.com" target="_blank">Tenor.com</a></li>
+        <li>Busque por: "coding animation", "developer GIF", "tech animation"</li>
+        <li>Clique no GIF desejado</li>
+        <li>Copie o link direto (geralmente terminado em .gif)</li>
+        <li>Integre no HTML com &lt;img src="URL"&gt;</li>
+      </ul>
+
+      <h3>Opção 2: Criar com Ferramentas Online</h3>
+      <ul>
+        <li><a href="https://ezgif.com" target="_blank">EZGIF.com</a> - Conversor de vídeo para GIF</li>
+        <li><a href="https://www.photopea.com" target="_blank">Photopea</a> - Editor online (como Photoshop)</li>
+        <li><a href="https://www.canva.com" target="_blank">Canva</a> - Designer gráfico</li>
+      </ul>
+
+      <h3>Opção 3: Usar CSS Animations (Sem GIFs)</h3>
+      <p>Já implementado no seu site! Use as classes:</p>
+      <div class="code-block">
+icon-animated     /* Flutuação suave */
+icon-rotating     /* Rotação contínua */
+icon-pulse        /* Pulsação de brilho */
+icon-glow         /* Efeito neon */
+      </div>
+    </section>
+
+    <!-- Integração -->
+    <section id="integracao" class="guide-section">
+      <h2>🔧 Integração de GIFs no Site</h2>
+
+      <h3>Formato Básico</h3>
+      <div class="code-block">
+&lt;img src="https://media.giphy.com/seu-gif.gif" alt="Descrição" 
+     style="width: 200px; height: auto; border-radius: 8px;"&gt;
+      </div>
+
+      <h3>Com Classe de Animação</h3>
+      <div class="code-block">
+&lt;div class="icon-animated"&gt;
+  &lt;img src="seu-gif.gif" alt="Animação"&gt;
+&lt;/div&gt;
+      </div>
+
+      <h3>Em Cards de Projeto</h3>
+      <div class="code-block">
+&lt;div class="project-card"&gt;
+  &lt;img src="projeto-preview.gif" alt="Projeto" 
+       style="width: 100%; border-radius: 4px; margin-bottom: 1rem;"&gt;
+  &lt;h3&gt;Nome do Projeto&lt;/h3&gt;
+  &lt;p&gt;Descrição...&lt;/p&gt;
+&lt;/div&gt;
+      </div>
+
+      <div class="tip">
+        💡 <strong>Dica:</strong> Use tamanho máximo de 5MB para melhor performance
+      </div>
+
+      <div class="warning">
+        ⚠️ <strong>Aviso:</strong> Muitos GIFs pesados podem deixar o site lento. Comprima antes de usar!
+      </div>
+    </section>
+
+    <!-- Exemplos -->
+    <section id="exemplos" class="guide-section">
+      <h2>✨ Exemplos de GIFs Recomendados</h2>
+
+      <h3>Para Seção Hero</h3>
+      <ul>
+        <li>Código digitando em terminal</li>
+        <li>Computador ligando</li>
+        <li>Teclado em ação</li>
+      </ul>
+
+      <h3>Para Cards de Projeto</h3>
+      <ul>
+        <li>Website sendo desenvolvido</li>
+        <li>API fazendo requisições</li>
+        <li>Database sincronizando</li>
+      </ul>
+
+      <h3>Para Seção de Experiência</h3>
+      <ul>
+        <li>Gráficos em movimento</li>
+        <li>Dados sendo analisados</li>
+        <li>Monitor do servidor</li>
+      </ul>
+
+      <h3>Para Contato</h3>
+      <ul>
+        <li>Email sendo enviado</li>
+        <li>Avião de papel voando</li>
+        <li>Checkmark aparecendo</li>
+      </ul>
+    </section>
+
+    <!-- Otimização -->
+    <section id="otimizacao" class="guide-section">
+      <h2>⚡ Otimização de Desempenho</h2>
+
+      <h3>Compressar GIFs</h3>
+      <ul>
+        <li>Use <a href="https://ezgif.com/optimize" target="_blank">EZGIF Optimizer</a></li>
+        <li>Reduza frames (30% de redução = -60% tamanho)</li>
+        <li>Diminua dimensões se maior que 600px</li>
+      </ul>
+
+      <h3>Alternativas Modernas</h3>
+      <div class="code-block">
+&lt;!-- Use WebP para melhor compressão --&gt;
+&lt;picture&gt;
+  &lt;source srcset="animacao.webp" type="image/webp"&gt;
+  &lt;img src="animacao.gif" alt="Animação"&gt;
+&lt;/picture&gt;
+      </div>
+
+      <div class="tip">
+        💡 WebP é 30-40% menor que GIF com melhor qualidade
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="recursos" class="guide-section">
+      <h2>📚 Recursos Úteis</h2>
+
+      <h3>Bancos de GIFs</h3>
+      <ul>
+        <li><a href="https://giphy.com" target="_blank">GIPHY - Maior banco de GIFs</a></li>
+        <li><a href="https://tenor.com" target="_blank">Tenor - Animações de qualidade</a></li>
+        <li><a href="https://www.unspla.sh" target="_blank">Unsplash - Imagens de alta qualidade</a></li>
+        <li><a href="https://pixabay.com" target="_blank">Pixabay - Recursos livres</a></li>
+      </ul>
+
+      <h3>Ferramentas de Edição</h3>
+      <ul>
+        <li><a href="https://ezgif.com" target="_blank">EZGIF - Conversor online</a></li>
+        <li><a href="https://www.photopea.com" target="_blank">Photopea - Photoshop online</a></li>
+        <li><a href="https://www.ffmpeg.org" target="_blank">FFmpeg - Conversão profissional</a></li>
+      </ul>
+
+      <h3>Geradores de Animação</h3>
+      <ul>
+        <li><a href="https://lottiefiles.com" target="_blank">Lottie - Animações JSON</a></li>
+        <li><a href="https://animista.net" target="_blank">Animista - CSS Animations</a></li>
+        <li><a href="https://rive.app" target="_blank">Rive - Animações vetor interativas</a></li>
+      </ul>
+    </section>
+
+    <!-- CSS Classes Reference -->
+    <section id="css-reference" class="guide-section">
+      <h2>🎯 Classes CSS Disponíveis</h2>
+
+      <h3>Animações de Ícones</h3>
+      <div class="code-block">
+.icon-animated     /* Flutuação suave (3s) */
+.icon-rotating     /* Rotação 20s */
+.icon-pulse        /* Pulso luminoso (2s) */
+.icon-glow         /* Brilho neon (2s) */
+      </div>
+
+      <h3>Efeitos de Card</h3>
+      <div class="code-block">
+.card-shimmer      /* Efeito brilho */
+.badge-pulse       /* Badge pulsante */
+.neon-box          /* Caixa estilo neon */
+.neon-text         /* Texto neon */
+      </div>
+
+      <h3>Animações Gerais</h3>
+      <div class="code-block">
+.fade-in-sequence  /* Fade in com delay */
+.typewriter        /* Efeito máquina de escrever */
+.gradient-animate  /* Gradiente animado */
+.burst-effect      /* Efeito explosão ao hover */
+      </div>
+
+      <h3>Exemplo de Uso</h3>
+      <div class="code-block">
+&lt;div class="icon-animated"&gt;
+  🚀
+&lt;/div&gt;
+
+&lt;img src="gif.gif" class="icon-rotating"&gt;
+
+&lt;button class="badge-pulse"&gt;
+  Clique aqui
+&lt;/button&gt;
+      </div>
+    </section>
+
+    <div style="text-align: center; margin: 3rem 0; padding: 2rem; border: 2px solid var(--primary-color); border-radius: 8px;">
+      <h2 style="color: var(--primary-light); margin-bottom: 1rem;">Pronto para Começar?</h2>
+      <a href="index.html" class="btn">Voltar ao Site</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 3rem;">
+    <div class="container">
+      <p>&copy; 2026 — Jhon Wictor | Guia de Animações Profissionais</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script>
+    // Menu hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

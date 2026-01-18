@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Jhon</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Jhon</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Section -->
+  <section class="auth-section">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Registrar</h1>
+        
+        <form id="register-form">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirmar Senha</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Registrar</button>
+        </form>
+
+        <div id="register-message"></div>
+
+        <p class="auth-link">
+          Já tem conta? <a href="login.html">Faça login aqui</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/config.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
